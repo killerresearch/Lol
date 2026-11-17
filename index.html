@@ -142,6 +142,8 @@
   .btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line);box-shadow:5px 5px 0 var(--line)}
   .btn.ghost:hover{box-shadow:7px 7px 0 var(--line)}
   .btn.red{background:var(--red);color:#fff;border-color:#12110d;box-shadow:5px 5px 0 #12110d}
+  .btn.blue{background:var(--blue);color:#fff;border-color:#12110d;box-shadow:5px 5px 0 #12110d}
+  .btn.blue:hover{box-shadow:7px 7px 0 #12110d}
   .btn.soon{
     background:var(--card);color:var(--ink-soft);border-color:var(--line);border-style:dashed;
     box-shadow:none;cursor:not-allowed;user-select:none;
@@ -401,6 +403,7 @@
     background:var(--red);color:#fff;border-color:#12110d;
     font-size:1.08rem;padding:16px 30px;min-height:3.5rem;
   }
+  .btn.buy-big.blue{background:var(--blue)}
   .buy-note{font-size:.95rem;font-weight:600;color:#3d3a30;margin:16px 0 0;max-width:44ch}
   @media (max-width:860px){
     .buy-grid{grid-template-columns:1fr}
@@ -712,7 +715,7 @@
         <a class="btn" href="#gallery" data-i18n="ctaGallery">Browse the Gallery <span class="arr">→</span></a>
         <a class="btn ghost" href="#studio" data-i18n="ctaCaption">Make Your Own Caption</a>
         <a class="btn red" href="https://swap.oneswap.cc/launchpad/token/7d31b2ba-db86-5b4d-9cc5-60d1a55fc768" target="_blank" rel="noopener noreferrer" data-i18n="ctaBuy">Buy $LOL <span class="arr">↗</span></a>
-        <span class="btn soon" role="link" aria-disabled="true" data-i18n="ctaBuySupa">Buy $LOL on SupaNova <span class="soon-tag">Soon</span></span>
+        <a class="btn blue" href="https://launch.supanova.app/coin/lol-449a5929cf" target="_blank" rel="noopener noreferrer" data-i18n="ctaBuySupa">Buy $LOL on SupaNova <span class="arr">↗</span></a>
       </div>
       <div class="hero-stats" aria-hidden="true">
         <div><b>20</b><span data-i18n="statExpressions">Expressions</span></div>
@@ -869,7 +872,7 @@
         <div class="sec-head">
           <span class="sec-tag" data-i18n="buyTag">The Token</span>
           <h2 data-i18n="buyH2">Get Your <em>$LOL</em></h2>
-          <p data-i18n="buyP">The faces are free to download — the token is not. $LOL trades on OnePump, the OneSwap launchpad on the Canton Network, and a SupaNova option is on the way. Here are the specs before you ape in.</p>
+          <p data-i18n="buyP">The faces are free to download — the token is not. $LOL trades on OnePump, the OneSwap launchpad on the Canton Network, and now also on SupaNova. Here are the specs before you ape in.</p>
         </div>
 
         <div class="buy-grid">
@@ -892,7 +895,11 @@
             </div>
             <div class="spec-row">
               <dt data-i18n="spSupa">Also on</dt>
-              <dd data-i18n="spSupaVal">SupaNova <small>coming soon — official token link not created yet</small></dd>
+              <dd data-i18n="spSupaVal"><a href="https://launch.supanova.app/coin/lol-449a5929cf" target="_blank" rel="noopener noreferrer" style="text-decoration:none;border-bottom:3px solid var(--blue)">SupaNova</a> <small>live now — launch.supanova.app</small></dd>
+            </div>
+            <div class="spec-row">
+              <dt data-i18n="spSupaId">SupaNova page ID</dt>
+              <dd><span class="mono">lol-449a5929cf</span></dd>
             </div>
             <div class="spec-row">
               <dt data-i18n="spPair">Trading pair</dt>
@@ -919,12 +926,13 @@
               <li data-i18n="bs2"><b>Fund it with CC.</b> Every trade on the launchpad runs against Canton Coin, so you need a CC balance first.</li>
               <li data-i18n="bs3"><b>Open the $LOL page on OneSwap</b> and connect your wallet.</li>
               <li data-i18n="bs4"><b>Swap CC for $LOL</b> on the bonding curve, review the amount, and confirm in your wallet.</li>
+              <li data-i18n="bs5"><b>Or buy on SupaNova instead.</b> Open the $LOL coin page on SupaNova, connect your wallet, and swap there.</li>
             </ol>
             <div class="buy-cta-row">
               <a class="btn buy-big" href="https://swap.oneswap.cc/launchpad/token/7d31b2ba-db86-5b4d-9cc5-60d1a55fc768" target="_blank" rel="noopener noreferrer" data-i18n="buyBig">Buy $LOL on OneSwap <span class="arr">↗</span></a>
-              <span class="btn buy-big soon" role="link" aria-disabled="true" data-i18n="buyBigSupa">Buy $LOL on SupaNova <span class="soon-tag">Soon</span></span>
+              <a class="btn buy-big blue" href="https://launch.supanova.app/coin/lol-449a5929cf" target="_blank" rel="noopener noreferrer" data-i18n="buyBigSupa">Buy $LOL on SupaNova <span class="arr">↗</span></a>
             </div>
-            <p class="buy-note" data-i18n="buyNote">Price, market cap, and liquidity move with the bonding curve — check the live numbers on the OneSwap page before buying. The SupaNova option is coming soon: no official $LOL link there yet, so don't trust any SupaNova $LOL link until it's posted here and on @LOLOnCanton. Memecoins are volatile: only spend what you can afford to laugh off. 😂</p>
+            <p class="buy-note" data-i18n="buyNote">Price, market cap, and liquidity move with the market — check the live numbers on the OneSwap or SupaNova page before buying. Only trust the official links on this page and on @LOLOnCanton. Memecoins are volatile: only spend what you can afford to laugh off. 😂</p>
           </div>
         </div>
 
@@ -964,7 +972,7 @@
           <div class="fly-cta">
             <p data-i18n="flyCtaP">Every trade spins the wheel.</p>
             <a class="btn buy-big" href="https://swap.oneswap.cc/launchpad/token/7d31b2ba-db86-5b4d-9cc5-60d1a55fc768" target="_blank" rel="noopener noreferrer" data-i18n="buyBig">Buy $LOL on OneSwap <span class="arr">↗</span></a>
-            <span class="btn buy-big soon" role="link" aria-disabled="true" data-i18n="buyBigSupa">Buy $LOL on SupaNova <span class="soon-tag">Soon</span></span>
+            <a class="btn buy-big blue" href="https://launch.supanova.app/coin/lol-449a5929cf" target="_blank" rel="noopener noreferrer" data-i18n="buyBigSupa">Buy $LOL on SupaNova <span class="arr">↗</span></a>
           </div>
         </div>
       </div>
@@ -977,7 +985,7 @@
     <div class="big" data-i18n="footBig">LOL <span>Faces</span> — problem?</div>
     <p data-i18n="footP">Twenty expressions, one round face. Redrawn with respect from the Trollface &amp; rage comic tradition. 😂</p>
     <p><a href="https://swap.oneswap.cc/launchpad/token/7d31b2ba-db86-5b4d-9cc5-60d1a55fc768" target="_blank" rel="noopener noreferrer" style="font-weight:900;text-decoration:none;border-bottom:3px solid #12110d" data-i18n="footBuy">Buy $LOL on OneSwap →</a></p>
-    <p><span style="font-weight:900;color:#57534a" data-i18n="footBuySupa">Buy $LOL on SupaNova — coming soon (link TBA)</span></p>
+    <p><a href="https://launch.supanova.app/coin/lol-449a5929cf" target="_blank" rel="noopener noreferrer" style="font-weight:900;text-decoration:none;border-bottom:3px solid #12110d" data-i18n="footBuySupa">Buy $LOL on SupaNova →</a></p>
     <p><a href="https://x.com/LOLOnCanton" target="_blank" rel="noopener noreferrer" style="font-weight:900;text-decoration:none;border-bottom:3px solid #12110d" data-i18n="footX">Follow us on 𝕏 — @LOLOnCanton →</a></p>
   </div>
 </footer>
@@ -1273,7 +1281,7 @@
     ctaGallery:"浏览画廊 <span class=\"arr\">→</span>",
     ctaCaption:"制作你的专属标题",
     ctaBuy:"购买 $LOL <span class=\"arr\">↗</span>",
-    ctaBuySupa:"在 SupaNova 购买 $LOL <span class=\"soon-tag\">即将推出</span>",
+    ctaBuySupa:"在 SupaNova 购买 $LOL <span class=\"arr\">↗</span>",
     statExpressions:"表情", statMoods:"情绪筛选", statRoots:"愤怒漫画起源",
     burstTxt:"戳<br />我！",
     doodle1:"哈哈！", doodle2:"有问题？", doodle3:"你急了？",
@@ -1323,12 +1331,13 @@
     stNote:"小提示：“空白 LOL”版本就是专门为配上你自己的标题而制作的。",
     buyTag:"代币",
     buyH2:"入手你的 <em>$LOL</em>",
-    buyP:"这些脸谱可以免费下载——但代币不行。$LOL 在 OnePump 上交易，这是 Canton 网络上的 OneSwap 发射平台，SupaNova 购买选项也即将推出。冲之前先看看参数。",
+    buyP:"这些脸谱可以免费下载——但代币不行。$LOL 在 OnePump 上交易，这是 Canton 网络上的 OneSwap 发射平台，现在也可以在 SupaNova 上交易。冲之前先看看参数。",
     spName:"代币名称", spTicker:"代币符号", spNetwork:"网络", spLaunch:"发射平台",
-    spSupa:"也将上线",
+    spSupa:"其他平台",
+    spSupaId:"SupaNova 页面 ID",
     spPair:"交易对", spModel:"销售模式", spId:"代币页面 ID", spX:"官方 X",
     spLaunchVal:"OnePump <small>由 OneSwap 出品 — swap.oneswap.cc</small>",
-    spSupaVal:"SupaNova <small>即将推出 — 官方代币链接尚未创建</small>",
+    spSupaVal:"<a href=\"https://launch.supanova.app/coin/lol-449a5929cf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"text-decoration:none;border-bottom:3px solid var(--blue)\">SupaNova</a> <small>已上线 — launch.supanova.app</small>",
     spPairVal:"$LOL / CC <small>与 Canton Coin 进行交易</small>",
     spModelVal:"联合曲线 <small>毕业后进入 OneSwap 流动池</small>",
     howBuy:"如何购买",
@@ -1336,9 +1345,10 @@
     bs2:"<b>往钱包里充 CC。</b>发射平台上的每笔交易都以 Canton Coin 结算，所以你需要先有 CC 余额。",
     bs3:"<b>打开 OneSwap 上的 $LOL 页面</b>并连接你的钱包。",
     bs4:"<b>在联合曲线上用 CC 兑换 $LOL</b>，核对数量，然后在钱包中确认。",
+    bs5:"<b>或者在 SupaNova 购买。</b>打开 SupaNova 上的 $LOL 代币页面，连接钱包，在那里兑换即可。",
     buyBig:"在 OneSwap 购买 $LOL <span class=\"arr\">↗</span>",
-    buyBigSupa:"在 SupaNova 购买 $LOL <span class=\"soon-tag\">即将推出</span>",
-    buyNote:"价格、市值和流动性会随联合曲线变动——购买前请在 OneSwap 页面查看实时数据。SupaNova 选项即将推出：那里目前还没有官方 $LOL 链接，在此处和 @LOLOnCanton 公布之前，不要相信任何 SupaNova $LOL 链接。表情包币波动很大：只花你输得起、笑得出的钱。😂",
+    buyBigSupa:"在 SupaNova 购买 $LOL <span class=\"arr\">↗</span>",
+    buyNote:"价格、市值和流动性会随市场变动——购买前请在 OneSwap 或 SupaNova 页面查看实时数据。请只相信本页和 @LOLOnCanton 上公布的官方链接。表情包币波动很大：只花你输得起、笑得出的钱。😂",
     flyTag:"运作方式",
     flyH3:"回购<em>飞轮</em>",
     flyP:"交易 $LOL 不只是推动图表——它还驱动着一个循环。每一笔交易都为飞轮供能，飞轮则持续转动。",
@@ -1354,7 +1364,7 @@
     footBig:"LOL <span>表情</span> — 有问题？",
     footP:"二十种表情，一张圆脸。怀着敬意，源自 Trollface 与愤怒漫画传统重新绘制。😂",
     footBuy:"在 OneSwap 购买 $LOL →",
-    footBuySupa:"在 SupaNova 购买 $LOL — 即将推出（链接待公布）",
+    footBuySupa:"在 SupaNova 购买 $LOL →",
     footX:"在 𝕏 上关注我们 — @LOLOnCanton →",
     lbAria:"查看大图", lbClose:"关闭", lbUse:"在工作室中使用", lbDl:"下载"
   };
