@@ -96,6 +96,7 @@
   }
   .lang-switch button + button{border-left:3px solid #12110d}
   .lang-switch button[aria-pressed="true"]{background:#12110d;color:var(--yellow)}
+  .nav-toggle{display:none}
   html[lang="zh-CN"] .face-card::after{content:"始于 2008 — 愤怒漫画时代"}
   html[lang="zh-CN"] .spec-card::before{content:"代币参数"}
   html[lang="zh-CN"] h1, html[lang="zh-CN"] .sec-head h2, html[lang="zh-CN"] .timeline h3,
@@ -412,11 +413,11 @@
   .fly-head p{color:#3d3a30;font-size:1.1rem;margin:0;font-weight:600}
   .fly-cycle{
     display:grid;gap:14px;
-    grid-template-columns:1fr 54px 1fr;
+    grid-template-columns:1fr 150px 1fr;
     grid-template-areas:
       "s1 ar s2"
       "au bd ad"
-      "au al s3";
+      ". al s3";
   }
   .fly-card{
     background:#fff;color:#12110d;border:3.5px solid #12110d;
@@ -443,7 +444,7 @@
     box-shadow:3px 3px 0 var(--red);
     font-family:"Anton", sans-serif;font-size:1.35rem;line-height:1;
   }
-  .fa-r{grid-area:ar}.fa-d{grid-area:ad}.fa-l{grid-area:al}.fa-u{grid-area:au}
+  .fa-r{grid-area:ar}.fa-d{grid-area:ad;justify-self:start}.fa-l{grid-area:al}.fa-u{grid-area:au;justify-self:end}
   .fly-badge{
     grid-area:bd;align-self:center;justify-self:center;
     width:136px;height:136px;border-radius:50%;padding:12px;
@@ -459,11 +460,11 @@
   @media (max-width:640px){
     .fly-cycle{
       grid-template-columns:1fr;gap:10px;
-      grid-template-areas:"s1" "ar" "s2" "ad" "s3" "al" "au" "bd";
+      grid-template-areas:"s1" "ar" "s2" "ad" "s3" "al" "bd" "au";
     }
     .fa-r span{transform:rotate(90deg)}
     .fa-l span{transform:rotate(-90deg)}
-    .fa-u span{transform:rotate(180deg)}
+    .fa-u,.fa-d{justify-self:stretch}
     .fly-badge{margin-top:8px}
   }
 
@@ -496,6 +497,177 @@
     .burst{width:96px;height:96px;font-size:.78rem;top:-26px;right:-4px}
     .hero-stats div{border-bottom:3px solid var(--line)}
   }
+
+  /* ---------- mobile polish (phones) ---------- */
+  html{-webkit-text-size-adjust:100%}
+  button, a, input, select, textarea{touch-action:manipulation}
+  @media (max-width:640px){
+    body{font-size:1rem}
+    .wrap{padding:0 16px}
+
+    /* nav: brand + language on row 1, links on their own full-width row */
+    nav.top .wrap{gap:10px 12px;padding-top:10px;padding-bottom:12px}
+    .brand{font-size:1.2rem;padding:7px 11px 5px;box-shadow:3px 3px 0 var(--red)}
+    .lang-switch{margin-left:auto;flex:0 0 auto}
+    .lang-switch button{min-height:3rem;padding:10px 16px;font-size:.9rem}
+    nav.top .links{
+      order:3;flex:1 1 100%;margin-left:0;gap:6px;
+      display:grid;grid-template-columns:repeat(3,1fr);
+    }
+    nav.top .links a{
+      justify-content:center;text-align:center;min-height:3rem;
+      padding:10px 6px;font-size:.78rem;letter-spacing:.04em;
+      border:3px solid #12110d;background:#fff;box-shadow:3px 3px 0 #12110d;
+    }
+    nav.top .links a[href*="x.com"]{grid-column:span 3}
+
+    /* hero */
+    .hero{padding:36px 0 30px}
+    .hero-grid{gap:34px}
+    h1{font-size:clamp(3.1rem,17vw,4.2rem);margin-top:18px}
+    h1 .lol{-webkit-text-stroke:2.5px var(--ink)}
+    h1 .faces-word{box-shadow:5px 5px 0 var(--ink)}
+    .hero p.lede{font-size:1.08rem;margin:18px 0 22px;max-width:none}
+    .stamp{font-size:.68rem;letter-spacing:.12em;padding:6px 11px;max-width:100%}
+    .hero-cta{gap:12px}
+    .hero-cta .btn{flex:1 1 100%;justify-content:center;min-height:3.4rem;padding:14px 18px;font-size:.98rem;text-align:center}
+    .hero-stats{max-width:none;margin-top:28px;box-shadow:4px 4px 0 var(--line)}
+    .hero-stats div{flex:1 1 0;padding:10px 8px;border-bottom:0;text-align:center}
+    .hero-stats b{font-size:1.35rem}
+    .hero-stats span{font-size:.6rem;letter-spacing:.08em}
+    .face-stage{width:100%;max-width:400px}
+    .face-card{box-shadow:8px 8px 0 var(--ink);padding:10px}
+    .burst{width:88px;height:88px;font-size:.72rem;top:-22px;right:0}
+    .poke-row{gap:10px;margin-top:26px;text-align:center}
+    .poke-count{font-size:.85rem}
+    .poke-hint{font-size:.88rem;flex:1 1 100%}
+    .doodle.d2{font-size:.95rem;bottom:4%}
+    .marquee{margin-top:28px;padding:9px 0}
+    .marquee-track{font-size:1rem}
+
+    /* sections */
+    section{padding:48px 0 6px}
+    .sec-head{margin-bottom:26px}
+    .sec-head h2{font-size:clamp(2rem,9.5vw,2.6rem)}
+    .sec-head p{font-size:1.05rem}
+    .sec-tag{font-size:.7rem;margin-bottom:13px}
+
+    /* gallery: one comfortable column, big tap targets */
+    .filters{gap:9px;margin-bottom:26px}
+    .chip{flex:1 1 calc(33.333% - 9px);min-height:3rem;padding:11px 8px;font-size:.82rem;text-align:center}
+    .gallery{grid-template-columns:1fr;gap:24px}
+    .g-card{padding:11px 11px 13px;box-shadow:5px 5px 0 #12110d}
+    .g-card:hover{transform:none;box-shadow:5px 5px 0 #12110d}
+    .g-card:nth-child(odd){transform:rotate(-.6deg)}
+    .g-card:nth-child(even){transform:rotate(.6deg)}
+    .g-name{font-size:1.18rem}
+    .g-use{font-size:.98rem}
+    .g-actions{gap:9px}
+    .mini-btn{min-height:3rem;padding:10px 8px;font-size:.85rem}
+
+    /* inspiration */
+    .insp-band{margin-top:56px;padding-bottom:44px}
+    .insp-band section{padding-top:44px !important}
+    .ref-card{box-shadow:6px 6px 0 var(--red);padding:11px}
+    .timeline li{padding:0 0 24px 56px}
+    .timeline li::before{width:40px;height:40px;font-size:.92rem}
+    .timeline li::after{left:20px;top:44px}
+    .timeline h3{font-size:1.22rem}
+    .timeline p{font-size:1rem}
+    .anatomy{grid-template-columns:1fr;gap:16px;margin-top:36px}
+    .a-card{padding:19px}
+
+    /* studio */
+    .studio{padding:20px 16px;gap:24px;box-shadow:6px 6px 0 var(--red)}
+    .face-pick{grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:18px}
+    .face-pick button{padding:5px;min-height:3rem}
+    input[type="text"]{font-size:1rem;padding:13px;min-height:3.2rem}
+    .canvas-box{align-items:stretch}
+    canvas#stage{max-width:100%}
+    .studio .canvas-box .btn{flex:1 1 100%;justify-content:center;min-height:3.4rem;text-align:center}
+
+    /* buy */
+    .buy-band{margin-top:56px;padding-bottom:44px}
+    .buy-band section{padding-top:44px !important}
+    .buy-grid{gap:34px}
+    .spec-card{padding:8px 18px 12px;box-shadow:6px 6px 0 #12110d}
+    .spec-row{padding:11px 0;gap:2px}
+    .spec-row dd{font-size:1.02rem;overflow-wrap:anywhere}
+    .buy-side h3{font-size:1.35rem}
+    .buy-steps li{font-size:1rem;padding-left:52px}
+    .buy-cta-row .btn.buy-big,
+    .fly-cta .btn.buy-big{flex:1 1 100%;justify-content:center;text-align:center;min-height:3.6rem;padding:16px 18px;font-size:1.02rem}
+    .buy-note{font-size:.94rem;max-width:none}
+
+    /* flywheel: vertical flow stays obvious */
+    .flywheel{margin-top:48px}
+    .fly-head{margin-bottom:24px}
+    .fly-head h3{font-size:clamp(1.75rem,8.5vw,2.3rem)}
+    .fly-head p{font-size:1.02rem}
+    .fly-cycle{gap:9px}
+    .fly-card{padding:17px 18px;box-shadow:5px 5px 0 #12110d}
+    .fly-card h4{font-size:1.2rem}
+    .fly-card p{font-size:.98rem}
+    .fly-arr span{width:42px;height:42px;font-size:1.2rem}
+    .fly-badge{width:124px;height:124px;margin-top:6px}
+    .fly-cta{gap:12px;margin-top:26px}
+    .fly-cta p{flex:1 1 100%;text-align:center;font-size:1.02rem}
+
+    /* footer */
+    footer{margin-top:56px;padding:32px 0 40px}
+    footer .big{font-size:1.7rem}
+    footer p a{display:inline-block;padding:8px 2px}
+
+    /* lightbox: thumb-friendly close + stacked actions */
+    .lightbox{padding:12px;align-items:flex-start;overflow-y:auto}
+    .lb-card{padding:12px;margin:auto 0;box-shadow:6px 6px 0 var(--red)}
+    .lb-card img{max-height:56vh}
+    .lb-close{top:max(12px, env(safe-area-inset-top));right:12px;width:52px;height:52px;font-size:1.35rem;background:rgba(8,8,6,.55)}
+    .lb-row{gap:9px}
+    .lb-row .g-name{flex:1 1 100%;margin-right:0;font-size:1.25rem}
+    .lb-row .mini-btn{flex:1 1 calc(50% - 5px);min-height:3rem}
+  }
+  @media (max-width:380px){
+    .chip{flex-basis:calc(50% - 9px)}
+    .hero-stats span{font-size:.55rem}
+    nav.top .links a{font-size:.72rem}
+  }
+
+  /* ---------- mobile hamburger nav: slim bar + dropdown panel ---------- */
+  @media (max-width:640px){
+    /* slim top bar: brand + language + hamburger only */
+    nav.top .wrap{flex-wrap:nowrap;min-height:64px;padding-top:8px;padding-bottom:8px;gap:10px}
+    .brand{flex:0 1 auto;white-space:nowrap}
+    .lang-switch{margin-left:auto;flex:0 0 auto}
+    .lang-switch button{padding:10px 11px}
+    .nav-toggle{
+      display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+      width:48px;height:48px;min-width:48px;min-height:48px;padding:0;cursor:pointer;
+      background:#12110d;color:var(--yellow);
+      border:3px solid #12110d;box-shadow:3px 3px 0 var(--red);
+      font-family:"Space Mono", monospace;font-size:1.4rem;font-weight:700;line-height:1;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .nav-toggle:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--red)}
+    .nav-toggle:focus-visible{outline:3px solid #12110d;outline-offset:2px}
+
+    /* menu hidden until the hamburger is tapped */
+    nav.top .links{
+      display:none;position:absolute;top:calc(100% + 8px);left:16px;right:16px;z-index:50;
+      flex-direction:column;gap:8px;margin-left:0;padding:10px;
+      background:var(--yellow);border:3.5px solid #12110d;box-shadow:6px 6px 0 #12110d;
+    }
+    nav.top .links.open{display:flex}
+    nav.top .links a{
+      width:100%;justify-content:flex-start;text-align:left;
+      min-height:3rem;padding:12px 14px;font-size:.95rem;letter-spacing:.05em;
+      background:#fff;border:3px solid #12110d;box-shadow:3px 3px 0 #12110d;
+    }
+    nav.top .links a[href*="x.com"]{grid-column:auto}
+
+    /* anchor jumps land below the slim sticky bar, not under it */
+    header[id], section[id]{scroll-margin-top:78px}
+  }
 </style>
 </head>
 <body>
@@ -503,7 +675,7 @@
 <nav class="top">
   <div class="wrap">
     <a class="brand" href="#top">LOL <span>Faces</span></a>
-    <div class="links">
+    <div class="links" id="navLinks">
       <a href="#gallery" data-i18n="navGallery">Gallery</a>
       <a href="#inspiration" data-i18n="navInspiration">Inspiration</a>
       <a href="#studio" data-i18n="navStudio">Caption Studio</a>
@@ -514,6 +686,7 @@
       <button type="button" data-setlang="en" aria-pressed="true">EN</button>
       <button type="button" data-setlang="zh" aria-pressed="false">中文</button>
     </div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span class="nav-toggle-icon" aria-hidden="true">☰</span></button>
   </div>
 </nav>
 
@@ -1210,6 +1383,39 @@
     b.addEventListener("click", function(){ applyLang(b.getAttribute("data-setlang")); });
   });
   applyLang(LANG);
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var toggle = document.getElementById("navToggle"),
+      links = document.getElementById("navLinks");
+  if(!toggle || !links) return;
+  var icon = toggle.querySelector(".nav-toggle-icon");
+  function isOpen(){ return links.classList.contains("open"); }
+  function setOpen(open){
+    links.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if(icon) icon.textContent = open ? "✕" : "☰";
+  }
+  toggle.addEventListener("click", function(){ setOpen(!isOpen()); });
+  /* tapping any menu link closes the panel; the anchor jump happens as normal */
+  links.addEventListener("click", function(e){
+    if(e.target.closest && e.target.closest("a")) setOpen(false);
+  });
+  /* tapping anywhere outside the panel (and not on the toggle) closes it */
+  document.addEventListener("click", function(e){
+    if(!isOpen()) return;
+    if(e.target.closest && (e.target.closest("#navLinks") || e.target.closest("#navToggle"))) return;
+    setOpen(false);
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && isOpen()){ setOpen(false); toggle.focus(); }
+  });
+  window.addEventListener("resize", function(){
+    if(window.innerWidth > 640 && isOpen()) setOpen(false);
+  });
 })();
 </script>
 </body>
